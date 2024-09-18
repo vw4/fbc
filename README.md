@@ -14,10 +14,10 @@
 
 There are known issues with PCB layout
 
-- Distance between 4p connectors and mounting holes is shorter for 0.5mm
-- All connectors have te be moved outside for 3.6mm to match the case outline
-- There are errors in J1 and J2 labels positions on the silkscreen - labels are positioned on the solder pads
-- D1 is to close to the J3 connector housing
+- The distance between the 4-pin connectors and the mounting holes is shorter by 0.5mm.
+- All connectors need to be moved outward by 3.6mm to match the case outline.
+- There are errors in the positions of the J1 and J2 labels on the silkscreen; the labels are placed on the solder pads.
+- D1 is too close to the J3 connector housing.
 
 | Qty | Value        | Device        | Package          | Parts                            | Description                                             | MF MPN        | OC_FARNELL | OC_NEWARK | PACKAGE  | SUPPLIER        |
 |-----|--------------|---------------|------------------|----------------------------------|---------------------------------------------------------|---------------|------------|-----------|----------|-----------------|
@@ -47,7 +47,7 @@ There are known issues with PCB layout
 
 ### Enclosure
 
-M3 treads have to be tapped in bottom part. Assembled with 20xM3 bolts
+M3 threads need to be tapped in the bottom part. Assembly requires M3x20mm bolts.
 
 | Printing method | Material | Color | Layer height | Infill |
 |-----------------|----------|-------|--------------|--------|
