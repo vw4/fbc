@@ -4,9 +4,13 @@
 - Delayed switch-off feature (can be disabled via T58b input)
 - Low power standby mode
 
+### FSM Diagram
+
+![fsm-diagram.svg](docs/fsm-diagram.svg)
+
 ## Schematics
 
-![schematics.png](pcb/schematics.png)
+![schematics.png](docs/schematics.png)
 
 ## Partlist
 
