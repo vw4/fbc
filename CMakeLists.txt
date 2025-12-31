@@ -23,7 +23,8 @@ set(CMAKE_FIND_ROOT_PATH_MODE_PACKAGE ONLY)
 
 project(fbc C)
 
-set(MCU attiny25)
+set(PROG_STR usbasp)
+set(MCU attiny85)
 set(F_CPU 1000000UL)
 
 if (NOT CMAKE_BUILD_TYPE)
@@ -68,4 +69,15 @@ add_custom_command(TARGET ${PROJECT_NAME}.elf POST_BUILD
         COMMAND avr-size --format=berkeley --target=ihex ${PROJECT_NAME}.elf
         BYPRODUCTS ${PROJECT_NAME}.hex ${PROJECT_NAME}.bin
         COMMAND ${CMAKE_SIZE} --format=berkeley --target=ihex --totals $<TARGET_FILE:${PROJECT_NAME}.elf>
+)
+
+add_custom_target(flash
+        DEPENDS ${PROJECT_NAME}.elf
+        COMMAND avrdude -c ${PROG_STR} -p ${MCU} -U flash:w:${PROJECT_NAME}.hex:i
+        COMMENT "flashes the hex file onto the MCU"
+)
+
+add_custom_target(fuses
+        COMMAND avrdude -c ${PROG_STR} -p ${MCU} lfuse:w:0x62:m -U hfuse:w:0xdf:m -U efuse:w:0xff:m
+        COMMENT "sets the fuses on the MCU"
 )
